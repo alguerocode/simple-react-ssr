@@ -1,0 +1,19 @@
+{
+  "name": "setup-exreact",
+  "version": "1.0.0",
+  "description": "implement expressjs server side rendering using reactjs component ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alhashmicode/setup-exreact.git"
+  },
+  "author": "alhashmicode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alhashmicode/setup-exreact/issues"
+  },
+  "homepage": "https://github.com/alhashmicode/setup-exreact#readme"
+}
