@@ -1,12 +1,14 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports.browserConfig = {
-    entry:'.client/index.js',
-    ouptut:{
+const browserConfig = {
+    entry:'./client/index.js',
+    output:{
         filename: '[name].js',
-        path: path.resolve(__dirname,"build"),
+        path: path.resolve(__dirname,"build","client"),
         assetModuleFilename: "assets/images/[name][ext]",
+        publicPath:'./',
+        clean:true
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -35,19 +37,22 @@ module.exports.browserConfig = {
     }
 }
 
-module.exports.serverConfig = {
+const serverConfig = {
     entry:'./index.js',
     target:"node",
     output:{
-        filename: '[name].js',
-        path: path.resolve(__dirname,"build"),
+        filename: 'server.js',
+        path: __dirname,
         assetModuleFilename: "assets/images/[hash][ext]",
+        publicPath:'./',
+        libraryTarget: "commonjs2"
     },
+    devtool:false,
     module:{
         rules:[
             {
                 test:/\.css$/,
-                use:['css-loader/locals']
+                use:[{loader:'css-loader/locals'}]
             },
             {
                 test: /\.(jpe?g|png|gif)$/,
@@ -56,10 +61,10 @@ module.exports.serverConfig = {
             {
                 test:/\.js$/,
                 exclude: /node_modules/,
-                use:{
-                    loader:"babel-loader"
-                }
+                loader:"babel-loader",
             }
         ]
     }
 }   
+
+module.exports = [browserConfig, serverConfig];
