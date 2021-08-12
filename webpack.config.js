@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const browserConfig = {
+const clientConfig = { // client webpack confiure object
     entry:'./client/index.js',
     output:{
         filename: '[name].js',
@@ -37,12 +37,13 @@ const browserConfig = {
     }
 }
 
-const serverConfig = {
+const serverConfig = { // server webpack configure object
     entry:'./index.js',
     target:"node",
     output:{
+        clean:true,
         filename: 'server.js',
-        path: __dirname,
+        path: path.resolve(__dirname,'build','server'),
         assetModuleFilename: "assets/images/[hash][ext]",
         publicPath:'./',
         libraryTarget: "commonjs2"
@@ -52,7 +53,7 @@ const serverConfig = {
         rules:[
             {
                 test:/\.css$/,
-                use:[{loader:'css-loader/locals'}]
+                use:[{loader:'css-loader/locals'}] // css locals tell server to care about css import without using it
             },
             {
                 test: /\.(jpe?g|png|gif)$/,
@@ -67,4 +68,4 @@ const serverConfig = {
     }
 }   
 
-module.exports = [browserConfig, serverConfig];
+module.exports = [clientConfig, serverConfig];
