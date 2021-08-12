@@ -10,6 +10,9 @@ const clientConfig = { // client webpack confiure object
         publicPath:'./',
         clean:true
     },
+    stats: {
+        errorDetails: true,
+    },
     plugins: [
         new MiniCssExtractPlugin({
             filename:"assets/styles/[name].css",
@@ -46,7 +49,9 @@ const serverConfig = { // server webpack configure object
         path: path.resolve(__dirname,'build','server'),
         assetModuleFilename: "assets/images/[hash][ext]",
         publicPath:'./',
-        libraryTarget: "commonjs2"
+    },
+    stats: {
+        errorDetails: true,
     },
     devtool:false,
     module:{
