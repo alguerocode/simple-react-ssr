@@ -27,8 +27,8 @@ app.get('*',(req, res) =>{
     })
 })
 
-app.use(express.static(path.resolve(__dirname,'..','public'))); 
-
+app.use(express.static(path.join(__dirname,'..','client'))); 
+console.log(__dirname);
 app.listen(PORT,((err) =>{ // server listening
     if(err) throw err;
     console.log('app listen in PORT: ',PORT);

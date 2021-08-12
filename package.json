@@ -13,7 +13,7 @@
     "url": "git+https://github.com/alhashmicode/setup-exreact.git"
   },
   "author": "alhashmicode",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alhashmicode/setup-exreact/issues"
   },
