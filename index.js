@@ -28,9 +28,10 @@ app.get('*',(req, res) =>{
 })
 
 app.use(express.static(path.join(__dirname,'..','client'))); 
-console.log(__dirname);
+
 app.listen(PORT,((err) =>{ // server listening
     if(err) throw err;
+    console.log(__dirname);
     console.log('app listen in PORT: ',PORT);
 }))
 
