@@ -12,10 +12,10 @@ const PORT = 3000;
 This is a built-in middleware function in Express.
 It serves static files and is based on serve-static
 */
-app.use(express.static(path.resolve(__dirname,'..','client'))); 
 
 
 // implementing server side rendering
+
 app.get('*',(req, res) =>{
     const app = ReactDOMServer.renderToString(<App/>);
     fs.readFile(path.resolve(__dirname,'..','..','public','index.html'), 'utf8',(err, data) =>{
@@ -27,6 +27,7 @@ app.get('*',(req, res) =>{
     })
 })
 
+app.use(express.static(path.resolve(__dirname,'..','public'))); 
 
 app.listen(PORT,((err) =>{ // server listening
     if(err) throw err;

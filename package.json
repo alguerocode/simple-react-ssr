@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development node ./build/server/server.js",
-    "build":"cross-env NODE_ENV=development webpack"
+    "build": "cross-env NODE_ENV=development webpack"
   },
   "repository": {
     "type": "git",
@@ -26,16 +26,13 @@
     "autoprefixer": "^10.3.1",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.2.0",
     "express": "^4.17.1",
     "ignore-styles": "^5.0.1",
-    "postcss-loader": "^6.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "mini-css-extract-plugin": "^2.2.0",
     "webpack-cli": "^4.7.2"
   }
 }
