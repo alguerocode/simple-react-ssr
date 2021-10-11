@@ -50,7 +50,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [alhashmicode](https://github.com/alhashmicode).<br />
+Copyright © 2021 [alguerocode](https://github.com/alguerocode).<br />
 This project is [ISC](https://github.com/alhashmicode/setup-exreact/blob/master/LICENSE) licensed.
 
 ***
